@@ -211,7 +211,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ])->toArray(),
 
 ];
