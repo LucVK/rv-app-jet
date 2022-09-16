@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::resource('clubmembers', \App\Http\Controllers\Rv\ClubMemberController::class);
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
