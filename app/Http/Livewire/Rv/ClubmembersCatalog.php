@@ -8,6 +8,8 @@ use Livewire\WithPagination;
 
 class ClubmembersCatalog extends Component
 {
+    use WithPagination;
+
     public function render()
     {
         $members = ClubMember::with([
