@@ -26,7 +26,7 @@ class ClubMemberController extends Controller
      */
     public function create()
     {
-        //
+        return view('rv.clubmembers.create');
     }
 
     /**
