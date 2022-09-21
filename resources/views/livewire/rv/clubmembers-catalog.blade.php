@@ -12,7 +12,7 @@
                 {{-- <x-clubmember-card :clubmember="$clubmember" class="{{ $loop->iteration < 3 ? 'col-span-1' : 'col-span-1' }}" /> --}}
 
                 <div>
-                    {{ $clubmember->firstname . ' ' . $clubmember->lastname }}
+                    {{ $clubmember->profile->firstname . ' ' . $clubmember->profile->lastname }}
                 </div>
             @endforeach
 

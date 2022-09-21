@@ -23,7 +23,7 @@ class CanteenTeamSeeder extends Seeder
         foreach (Season::all() as $jaargang) {
             echo 'Seeding jaargang: ' . $jaargang->year . PHP_EOL;
 
-            foreach (Season::pluck('id')->toArray() as $key => $value) {
+            foreach (Department::pluck('id')->toArray() as $key => $value) {
 
                 $algemeen = 'Algemeen-' . $value . '-' . $jaargang->id;
                 DB::table('canteen_teams')->insert([

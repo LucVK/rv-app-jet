@@ -16,5 +16,6 @@ class ClubMemberSeeder extends Seeder
     public function run()
     {
         ClubMember::factory(1500)->create();
+        // ClubMember::factory()->create();
     }
 }

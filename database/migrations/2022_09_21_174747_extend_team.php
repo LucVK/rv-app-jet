@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Team;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,12 +14,12 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::create('departments', function (Blueprint $table) {
-        //     $table->id();
-        //     $table->string('name',32)->unique();
-        //     $table->string('slug',32)->unique();
-        //     $table->timestamps();
-        // });
+
+        Schema::table('teams', function ($table) {
+            $table->unsignedBigInteger('team_id')->nullable();
+            $table->foreign('team_id')->references('id')->on('teams')->nullable()
+                ->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**
@@ -28,6 +29,8 @@ return new class extends Migration
      */
     public function down()
     {
-        // Schema::dropIfExists('departments');
+        Schema::table('teams', function ($table) {
+            $table->dropColumn('team_id');
+        });
     }
 };

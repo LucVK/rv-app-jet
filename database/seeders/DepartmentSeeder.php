@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Rv\Department;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -10,14 +11,14 @@ use Illuminate\Support\Str;
 class DepartmentSeeder extends Seeder
 {
     private $afdelingen = [
-        'Wielertoeristen',
-        'Voetbal Den Een',
-        'Voetbal Den Twee',
-        'Voetbal Den Drie',
-        'Voetbal Dames',
-        'Petanque',
-        'Kaarten',
-        'Biljarten',
+        'Wielertoeristen' => ['Groep 1', 'Groep 2', 'Groep 3', 'Groep 4', 'Groep 5'],
+        'Voetbal Den Een' => [],
+        'Voetbal Den Twee' => [],
+        'Voetbal Den Drie' => [],
+        'Voetbal Dames' => [],
+        'Petanque' => [],
+        'Kaarten' => [],
+        'Biljarten' => [],
     ];
 
     /**
@@ -27,11 +28,12 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-        foreach($this->afdelingen as $afdeling) {
-            DB::table('departments')->insert([
-                'name' => $afdeling,
-                'slug' => Str::slug($afdeling),
-            ]);
+        foreach ($this->afdelingen as $key => $value) {
+            $afd = Department::factory()->create(['name' =>  $key]);
+
+            foreach ($value as $group) {
+                Department::factory()->create(['name' => $group, 'team_id' => $afd->id]);
+            }
         }
     }
 }

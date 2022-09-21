@@ -14,22 +14,22 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('club_members', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(User::class)->nullable()->constrained()->nullOnDelete();
+        // Schema::create('club_members', function (Blueprint $table) {
+        //     $table->id();
+        //     $table->foreignIdFor(User::class)->nullable()->constrained()->nullOnDelete();
 
-            $table->string('code', 9)->unique();
-            $table->string('firstname', 32);
-            $table->string('lastname', 32);
-            $table->string('birthdate')->nullable();
-            $table->string('streetandnumber')->nullable();
-            $table->string('zipcode', 4)->nullable();
-            $table->string('city')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('email')->nullable();
+        //     $table->string('code', 9)->unique();
+        //     $table->string('firstname', 32);
+        //     $table->string('lastname', 32);
+        //     $table->string('birthdate')->nullable();
+        //     $table->string('streetandnumber')->nullable();
+        //     $table->string('zipcode', 4)->nullable();
+        //     $table->string('city')->nullable();
+        //     $table->string('phone')->nullable();
+        //     $table->string('email')->nullable();
 
-            $table->timestamps();
-        });
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('club_members');
+        // Schema::dropIfExists('club_members');
     }
 };

@@ -2,6 +2,7 @@
 
 use App\Models\Rv\Department;
 use App\Models\Rv\Season;
+use App\Models\Team;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -19,7 +20,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignIdFor(Season::class)->constrained();
-            $table->foreignIdFor(Department::class)->constrained();
+            $table->foreignIdFor(Department::class); //->constrained();
 
             $table->string('name',32)->unique();
             $table->string('slug',32)->unique();
