@@ -5,9 +5,11 @@ namespace App\Models\Rv;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laratrust\Traits\LaratrustUserTrait;
 
 class ClubMember extends User
 {
+    use LaratrustUserTrait;
     use HasFactory;
 
     protected $with = ['profile'];
