@@ -67,8 +67,8 @@ class ClubMemberFactory extends Factory
                 "zipcode" => fake()->numberBetween(1000,9000),
                 "phone" => fake()->phoneNumber,
             ]);
-            $member->name = $this->generateLoginCode($prof->firstname, $prof->lastname);
-            $member->save();
+            // $member->name = $this->generateLoginCode($prof->firstname, $prof->lastname);
+            // $member->save();
         });
     }
 

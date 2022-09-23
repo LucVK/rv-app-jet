@@ -199,5 +199,8 @@ return [
         'updated_at'               => 'bijgewerkt op',
         'username'                 => 'gebruikersnaam',
         'year'                     => 'jaar',
+        'lastname'                 => 'achternaam',
+        'firstname'                => 'voornaam',
+        'department'               => 'afdeling',
     ],
 ];

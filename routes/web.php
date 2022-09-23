@@ -18,7 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::resource('clubmembers', \App\Http\Controllers\Rv\ClubMemberController::class);
 
 Route::middleware([
     'auth:sanctum',
@@ -28,4 +27,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::resource('clubmembers', \App\Http\Controllers\Rv\ClubMemberController::class);
+
+
+
 });

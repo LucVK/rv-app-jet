@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Rv;
 
+use App\Events\Rv\ClubMemberCreate;
 use App\Http\Controllers\Controller;
 use App\Models\Rv\ClubMember;
 use App\Http\Requests\StoreClubMemberRequest;
 use App\Http\Requests\UpdateClubMemberRequest;
+use App\Models\Rv\CanteenTeam;
 
 class ClubMemberController extends Controller
 {
@@ -48,7 +50,9 @@ class ClubMemberController extends Controller
      */
     public function show(ClubMember $clubMember)
     {
-        //
+        event(new ClubMemberCreate(['name'=>'Luc', 'email'=> 'luc.vankeer@telenet.be']));
+        // event(new ClubMemberCreate(new CanteenTeam(['payload'=>['name'=>'Luc', 'email'=> 'luc.vankeer@telenet.be']] )));
+        // event(new ClubMemberCreate(CanteenTeam::factory()->make()));
     }
 
     /**
