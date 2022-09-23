@@ -9,6 +9,8 @@ class Season extends Model
 {
     use HasFactory;
 
+    private static $current;
+
     public function clubmemberships()
     {
         return $this->hasMany(ClubMembership::class);
@@ -23,4 +25,14 @@ class Season extends Model
     {
         return $this->hasMany(CanteenTeam::class);
     }
+
+    public static function current()
+    {
+        $year = date("Y");
+        if (self::$current == null  || self::$current->year != $year )
+        {
+            self::$current = Season::where('year', $year)->firstOrFail();
+        }
+        return self::$current;
+    }    
 }
