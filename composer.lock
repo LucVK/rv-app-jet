@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2ba6480755c643d573f3f24d0ebff4b9",
+    "content-hash": "e8bedee00c52078d2ea9ff4d91f1d093",
     "packages": [
         {
             "name": "asantibanez/livewire-calendar",
@@ -1199,6 +1199,83 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "kirschbaum-development/livewire-filters",
+            "version": "0.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kirschbaum-development/livewire-filters.git",
+                "reference": "706ad4ca2c295edad8c97c89365af8eb05e71aa3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kirschbaum-development/livewire-filters/zipball/706ad4ca2c295edad8c97c89365af8eb05e71aa3",
+                "reference": "706ad4ca2c295edad8c97c89365af8eb05e71aa3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.0",
+                "illuminate/support": "^9.0",
+                "livewire/livewire": "^2.10",
+                "php": "^8.0",
+                "spatie/laravel-package-tools": "^1.9.2"
+            },
+            "require-dev": {
+                "nunomaduro/collision": "^6.0",
+                "orchestra/testbench": "^7.0",
+                "pestphp/pest": "^1.21",
+                "pestphp/pest-plugin-laravel": "^1.1",
+                "phpunit/phpunit": "^9.5",
+                "spatie/laravel-ray": "^1.26"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kirschbaum\\LivewireFilters\\LivewireFiltersServiceProvider"
+                    ],
+                    "aliases": {
+                        "LivewireFilters": "Kirschbaum\\LivewireFilters\\Facades\\LivewireFilters"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kirschbaum\\LivewireFilters\\": "src",
+                    "Kirschbaum\\LivewireFilters\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David VanScott",
+                    "email": "david@kirschbaumdevelopment.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Livewire Filters is a series of Livewire components that provide you with the tools to do live filtering of your data from your own Livewire components.",
+            "homepage": "https://github.com/kirschbaum-development/livewire-filters",
+            "keywords": [
+                "filters",
+                "kirschbaum-development",
+                "laravel",
+                "livewire"
+            ],
+            "support": {
+                "issues": "https://github.com/kirschbaum-development/livewire-filters/issues",
+                "source": "https://github.com/kirschbaum-development/livewire-filters/tree/0.3.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/kirschbaum-development",
+                    "type": "github"
+                }
+            ],
+            "time": "2022-07-18T20:55:46+00:00"
         },
         {
             "name": "kkszymanowski/traitor",

@@ -17,6 +17,11 @@ class Department extends Team
         static::addGlobalScope(new DepartmentScope());
     }
 
+    public static function orderedNames()
+    {
+        return Department::orderBy('name', 'Asc')->pluck('name')->toArray();
+    }
+
     public function groups()
     {
         return $this->hasMany(Team::class,'team_id'); // Team::where('team_id', $this->id)->get();

@@ -6,9 +6,11 @@
     </x-slot>
 
 
-    <div>
+    <div class="py-12">
         <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-            @livewire('rv.clubmembers.create-clubmember-form')
+            {{-- <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg"> --}}
+                @livewire('rv.clubmembers.create-clubmember-form')
+            {{-- </div> --}}
             <x-jet-section-border />
         </div>
     </div>
