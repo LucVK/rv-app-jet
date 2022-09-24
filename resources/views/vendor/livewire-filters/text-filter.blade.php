@@ -5,7 +5,7 @@
         id="{{ $key }}"
         class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pr-8 sm:text-sm border-gray-300 rounded-md"
         placeholder="Filter..."
-        wire:model="value"
+        wire:model.debounce.1000ms="value"
     >
 
     @if ($value !== $initialValue)

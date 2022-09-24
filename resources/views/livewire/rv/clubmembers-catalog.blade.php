@@ -6,7 +6,9 @@
             <div><livewire:livewire-filters-checkbox :filter="$filters['department']" /></div>
             <p class="m-2  text-lg"> Jaargang </p>
             <div class="mr-4 "> <livewire:livewire-filters-select :filter="$filters['season']" /> </div>
-    
+            <p class="m-2  text-lg"> Naam </p>
+            <div class="mr-4 "> <livewire:livewire-filters-text :filter="$filters['search']" /> </div>
+            <div class="m-3" wire:loading>Ophalen gegevens....</div>
         </div>
 
     </div>
@@ -19,7 +21,7 @@
         @if ($clubmembers->count())
             <div class="grid grid-cols-3 sm:grid sm:grid-cols-3 bottom-2 ">
                 @foreach ($clubmembers as $clubmember)
-                    <x-rv.clubmember-card :clubmember="$clubmember"
+                    <x-rv.clubmember-card :clubmember="$clubmember" :year="$year"
                         class="{{ $loop->iteration < 3 ? 'col-span-1' : 'col-span-1' }}" />
                 @endforeach
             </div>

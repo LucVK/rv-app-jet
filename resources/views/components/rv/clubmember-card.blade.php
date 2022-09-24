@@ -1,4 +1,4 @@
-@props(['clubmember'])
+@props(['clubmember', 'year'])
 
 <article
     {{ $attributes->merge(['class' => 'transition-colors duration-300 hover:bg-gray-500 border border-red border-opacity-2 hover:border-opacity-5 rounded-xl']) }}>
@@ -14,12 +14,14 @@
             {{ $clubmember->email }}
         </div>
         <div>
-            {{ $clubmember->clubmemberships->last()->department->name }}
+            @foreach ($clubmember->clubmemberships as $membership)
+                @if ($membership->season->year == $year)
+                    {{ $membership->department->name }}
+                @endif
+            @endforeach
         </div>
         <div>
-            @foreach ($clubmember->clubmemberships as $membership)
-                {{ $membership->season->year}}
-            @endforeach
+            {{ $year }}
         </div>
     </div>
 </article>

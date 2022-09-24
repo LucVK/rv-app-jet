@@ -26,7 +26,7 @@ class ClubmembersCatalog extends Component
         $kk = array_keys($seasons);
 
         return [
-            // Filter::make('search'),
+            Filter::make('search'),
             Filter::make('department')->options($departmentNames)->default($departmentNames),
             Filter::make('season')->options(array_keys($seasons))->default(array_key_first($seasons)),
             // Filter::make('status')->options(['published', 'draft'])->default('published'),
@@ -43,7 +43,7 @@ class ClubmembersCatalog extends Component
 
     public function render()
     {
-        $aa = $this->filters['department']->value;
+        $search = '%'. $this->filters['search']->value . '%';
 
         // if ($this->isFiltered) {
         //     $this->resetPage();
@@ -63,18 +63,12 @@ class ClubmembersCatalog extends Component
                     $query->whereIn('name',$this->filters['department']->value );
                 });
             })
-
-
-            // ->has('clubmemberships.season.year', $this->filters['season'])
-        // ->whereIn('')
-        
-        
-        
-        ->paginate(15);
-
+            ->where('name','like',$search)
+            ->paginate(15);
 
         return view('livewire.rv.clubmembers-catalog', [
-            'clubmembers' => $members
+            'clubmembers' => $members,
+            'year' => $this->filters['season']->value,
         ]);
     }
 }
